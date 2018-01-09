@@ -22,11 +22,11 @@ public class BigSort {
 		return unsorted;
 	}
 	
-	public static void printArray(String[] sorted, int index){
-		if(index==sorted.length){
+	public static void printArray(ArrayList<BigInteger> sorted, int index){
+		if(index==sorted.size()){
 			return;
 		}
-		System.out.println(sorted[index]);
+		System.out.println(sorted.get(index));
 		printArray(sorted, ++index);
 	}
 
@@ -41,8 +41,14 @@ public class BigSort {
 			unsorted[i] = s.next();
 		}
 		
+		ArrayList<BigInteger> ar = new ArrayList();
+		for(int i=0;i<n;i++) {
+			ar.add(new BigInteger(unsorted[i]));
+		}
+		ar.sort(null);
+		
 		String[] sorted = sort(unsorted);
-		printArray(sorted, 0);
+		printArray(ar, 0);
 		
 	}
 

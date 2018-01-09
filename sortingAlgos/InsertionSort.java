@@ -39,6 +39,7 @@ public class InsertionSort {
 		
 		insertionSort(arr);
 		SelectionSort.printArray(arr, 0);
+		s.close();
 	}
 
 }
